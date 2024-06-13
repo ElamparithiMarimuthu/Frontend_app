@@ -19,6 +19,6 @@ jobs:
           password: ${{ secrets.PASSWD }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /opt/frontend/frontend # navigate into the folders
-            sudo git pull origin main
+            cd Frontend_app # navigate into the folders
+            git pull
             
