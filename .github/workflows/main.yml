@@ -2,7 +2,7 @@ name: frontendapp
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "dev" ]
 
 jobs:
   laravel-tests:
