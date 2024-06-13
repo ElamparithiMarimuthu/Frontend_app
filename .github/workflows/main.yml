@@ -1,0 +1,24 @@
+name: frontendapp
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  laravel-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Test Application
+        uses: appleboy/ssh-action@v0.1.2
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /opt/frontend/frontend # navigate into the folders
+            sudo git pull origin main
+            
